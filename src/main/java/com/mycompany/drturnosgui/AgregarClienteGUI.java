@@ -169,19 +169,19 @@ public class AgregarClienteGUI extends javax.swing.JFrame {
     String nuevaObraSocial = (String) boxObrasSociales.getSelectedItem();
 
     // Validación de DNI: Solo permite números
-    if (!nuevoDni.matches("\\d+")) {
+    if ((!nuevoDni.matches("\\d+"))&&(!fieldDni.getText().isEmpty())) {
         showError("El DNI debe contener solo números.");
         return;
     }
 
     // Validación de Nombre: No debe contener números
-    if (nuevoNombre.matches(".*\\d.*")) {
+    if ((nuevoNombre.matches(".*\\d.*"))&&(!fieldNombre.getText().isEmpty())) {
         showError("El Nombre no debe contener números.");
         return;
         }
 
     // Validación de Teléfono: Solo permite números
-    if (!nuevoTelefono.matches("\\d+")) {
+    if ((!nuevoTelefono.matches("\\d+"))&&(!fieldTelefono.getText().isEmpty())) {
         showError("El Teléfono debe contener solo números.");
         return;
     }
